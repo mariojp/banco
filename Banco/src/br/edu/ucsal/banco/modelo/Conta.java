@@ -2,24 +2,33 @@ package br.edu.ucsal.banco.modelo;
 
 public class Conta {
 	
-	public int agencia;
+	private int agencia;
 	
-	public int numero;
+	private int numero;
 	
-	public double saldo;
+	private double saldo = 0;
 	
-//	public Conta() {
-//		super();
-//	}
+	public Conta(int agencia, int numero) {
+		this.numero = numero;
+		this.agencia = agencia;
+		this.saldo = 0;
+	}
 	
 	
 	public void sacar(double valor) {
-		saldo = saldo - valor;
+		this.saldo = this.saldo - valor;
 	}
 	
 	public void depositar(double valor) {
-		saldo = saldo + valor;
+		this.saldo = this.saldo + valor;
 	}
+	
+	
+	public void transferir(double valor, Conta conta) {
+		this.saldo = this.saldo - valor;
+		conta.saldo = conta.saldo + valor; 
+	}
+	
 	
 
 }
