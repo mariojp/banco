@@ -11,7 +11,6 @@ Usuario: <input type="text" id="user" name="u" ><br>
 Senha: <input type="password" id="pass" name="p" ><br>
 <button type="submit">Enviar</button>
 
-
 <%
 
 System.out.println("Servidor");
