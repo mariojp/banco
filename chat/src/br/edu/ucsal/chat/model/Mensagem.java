@@ -13,18 +13,15 @@ public class Mensagem {
 	
 	
 	
-	public Mensagem(Usuario remetente, Usuario destinatario, String conteudo) {
+	public Mensagem(Usuario remetente, String conteudo) {
 		super();
 		this.remetente = remetente;
-		this.destinatario = destinatario;
 		this.conteudo = conteudo;
 		this.horario = LocalDateTime.now();
 	}
 	
 	
-	public Mensagem(Usuario remetente, String conteudo) {
-		this(remetente,null,conteudo);
-	}
+
 	
 	
 	public Usuario getRemetente() {
@@ -51,6 +48,11 @@ public class Mensagem {
 	
 	public void setHorario(LocalDateTime horario) {
 		this.horario = horario;
+	}
+	
+	@Override
+	public String toString() {
+		return this.conteudo; 
 	}
 
 }
